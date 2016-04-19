@@ -13,12 +13,12 @@ email:<%= @user.email %>
 area:<%= @user.area %>
 
  </li>
- <li>
-<%= link_to "followers" %>
- </li>
 <li>
-<%= link_to "followings" %>
+<%= link_to "followings" , followings_path(@user) %>
   </li>
+ <li>
+<%= link_to "followers", followers_path(@user) %>
+ </li>
     </section>
   </aside>
   <div class="col-md-8">
@@ -37,7 +37,7 @@ area:<%= @user.area %>
 <%= render @microposts %>
 
       </ol>
-    <%= paginate @microposts %>
+      
 <% end %>
 
 
