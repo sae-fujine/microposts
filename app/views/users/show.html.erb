@@ -2,26 +2,29 @@
   <aside class="col-md-4">
     <section class="user_info">
 
-
-
-
 <%= gravatar_for @user %> <%= @user.name %>
-  <li>
-email:<%= @user.email %>
- </li>
-  <li>
-area:<%= @user.area %>
 
- </li>
-<li>
-<%= link_to "followings" , followings_path(@user) %>
-  </li>
- <li>
-<%= link_to "followers", followers_path(@user) %>
- </li>
-    </section>
-  </aside>
-  <div class="col-md-8">
+<ul style="list-style:none;">
+    <li>
+        email:<%= @user.email %>
+    </li>
+    <li>
+        area:<%= @user.area %>
+    </li>
+    <br/>
+    <li>
+        <%= link_to "followers", followers_path(@user) %>
+    </li>
+    <li>
+        <%= link_to "followings" , followings_path(@user) %>
+    </li>
+</ul>
+
+</section>
+
+</aside>
+
+<div class="col-md-8">
 
 <%= render 'follow_form' if logged_in? %>
 
@@ -37,7 +40,7 @@ area:<%= @user.area %>
 <%= render @microposts %>
 
       </ol>
-      
+    <%= paginate @microposts %>
 <% end %>
 
 
@@ -52,4 +55,3 @@ area:<%= @user.area %>
 
   </div>
 </div>
-
