@@ -107,7 +107,7 @@ aside {
 
 /* microposts */
 
-.microposts {
+.microposts, .following_users, .follower_users {
   list-style: none;
   padding: 0;
   li {
@@ -151,3 +151,4 @@ span.picture {
     border: 0;
   }
 }
+
